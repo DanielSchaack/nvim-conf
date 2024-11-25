@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
 		as = "rose-pine",
 		config = function()
 			vim.cmd('colorscheme rose-pine')
-		end   
+		end
 	})
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.8',
@@ -26,6 +26,15 @@ return require('packer').startup(function(use)
 	use('hrsh7th/nvim-cmp')
 	use('hrsh7th/cmp-nvim-lsp')
 	use('nvim-treesitter/playground')
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        },
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
 	use {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",

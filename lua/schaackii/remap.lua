@@ -1,6 +1,10 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+
+-- Add empty line
+vim.keymap.set('n', '<CR>', 'm`o<Esc>``')
+
 -- Move highlighted text
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -13,6 +17,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<leader>lsp", "<cmd>LspRestart<cr>")
+
 
 -- Pasting over highlighted text does not replace current register
 vim.keymap.set("x", "<leader>p", [["_dP]])
