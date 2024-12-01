@@ -21,6 +21,22 @@ require("mason-lspconfig").setup({
 				capabilities = capabilities
 			}
 		end,
+        pylsp = function()
+            local lspconfig = require("lspconfig")
+            lspconfig.pylsp.setup({
+                root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
+            settings = {
+                pylsp = {
+                    plugins = {
+                        pycodestyle = {
+                            ignore = {'W391'},
+                            maxLineLength = 100
+                        }
+                    }
+                }
+            }
+        })
+        end,
 	}
 })
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
