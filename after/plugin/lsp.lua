@@ -30,10 +30,34 @@ require("mason-lspconfig").setup({
                         plugins = {
                             pycodestyle = {
                                 ignore = {'W391'},
-                                maxLineLength = 100
+                                maxLineLength = 120
                             }
                         }
                     }
+                }
+            })
+        end,
+        ltex = function ()
+            local lspconfig = require("lspconfig")
+            lspconfig.ltex.setup({
+                autostart = false,
+                filetypes = {},
+                settings = {
+                    ltex = {
+                        checkFrequency = "save",
+                        language = "en-US",
+                        additionalRules = {
+                            languageModel = "~/.local/share/ngrams/",
+                            -- enablePickyRules = true,
+                            -- motherTongue = "de",
+                        },
+                        disabledRules = {
+                            ["en"] = { "MORFOLOGIK_RULE_EN" },
+                            ["en-GB"] = { "MORFOLOGIK_RULE_EN_GB" },
+                            ["en-US"] = { "MORFOLOGIK_RULE_EN_US" },
+                            ["de"] = { "MORFOLOGIK_RULE_DE_DE" },
+                        },
+                    },
                 }
             })
         end,
