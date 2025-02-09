@@ -42,5 +42,6 @@ return require('packer').startup(function(use)
 		branch = "harpoon2",
 		requires = { {"nvim-lua/plenary.nvim"} }
 	}
+    use ('christoomey/vim-tmux-navigator')
 
 end)
