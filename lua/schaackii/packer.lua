@@ -28,6 +28,8 @@ return require('packer').startup(function(use)
 	use('hrsh7th/nvim-cmp')
 	use('hrsh7th/cmp-nvim-lsp')
 	use('nvim-treesitter/playground')
+    use('OXY2DEV/markview.nvim')
+    use('lervag/vimtex')
     use {
         'lewis6991/gitsigns.nvim',
         requires = {
@@ -42,12 +44,6 @@ return require('packer').startup(function(use)
 		branch = "harpoon2",
 		requires = { {"nvim-lua/plenary.nvim"} }
 	}
-    use({
-        "andrewferrier/wrapping.nvim",
-        config = function()
-            require("wrapping").setup()
-        end,
-    })
     use ('christoomey/vim-tmux-navigator')
 
 end)
