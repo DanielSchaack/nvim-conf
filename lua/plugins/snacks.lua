@@ -7,9 +7,16 @@ return {
     picker = {
       sources = {
         explorer = {
+          hidden = true,
           layout = { layout = { position = "right" } },
         },
       },
+    },
+    scroll = {
+      enabled = false,
+    },
+    words = {
+      debounce = 20,
     },
   },
   keys = {

@@ -9,4 +9,14 @@ return {
       colorscheme = "rose-pine",
     },
   },
+
+  {
+    "folke/tokyonight.nvim",
+    enabled = false,
+  },
+
+  {
+    "catppuccin/nvim",
+    enabled = false,
+  },
 }
